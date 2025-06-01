@@ -65,16 +65,16 @@
             <h5><b>Hal xxxxxxx<br>
             Jl. xxxx xxxx xxx. 7 Sukun, Malang</b></h5>
             <h6 class="text-secondary">Ticket No.</h6>
-            <h5><b></b>hi</h5>
-            <h6 class="text-secondary">Guest Name</h6>
-            <h5><b>dddd</b></h5>
+            <h5><b></b><?= $data[0]->student_id ?></h5>
+            <h6 class="text-secondary">Graduates Name</h6>
+            <h5><b><?= $data[0]->student_name ?></b></h5>
           </div>
           <div class="col-md-4 align-items-center">
             <h6 class="text-white">Ticket Barcode:</h6>
             <!-- <img src="barcode.jpg" style="max-width:250px" class="border border-black p-3"> -->
             
             <div id="qrcode" style="width: 250px; height:250px" class="center"></div>
-            <h5><b><?= $id ?></b></h5>
+            <h5><b><?= $data[0]->student_id ?></b></h5>
           </div>
         </div>
 

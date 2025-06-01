@@ -91,8 +91,8 @@ public $fieldOption = [
         ->select('sd.*')
         ->where('sd.deleted_at',null);
 
-        print_r($builder->getResult());
-        // return view('qr',['data' => $id]);
+        // print_r($builder->get()->getResult());
+        return view('qr',['data' => $builder->get()->getResult()]);
     }
 
 }
