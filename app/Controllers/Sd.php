@@ -89,6 +89,7 @@ public $fieldOption = [
         //echo "idnya".$id;
            $builder = Database::connect()->table($this->table)
         ->select('sd.*')
+        ->where('sd.student_id',$id)
         ->where('sd.deleted_at',null);
 
         // print_r($builder->get()->getResult());
