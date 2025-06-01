@@ -7,7 +7,7 @@ use App\Models\SdModel;
 use App\Libraries\datatable;
 use Config\Database;
 
-class sd extends MyResourceController
+class Sd extends MyResourceController
 {
 
     public $table = "sd";
