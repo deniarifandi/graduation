@@ -38,7 +38,26 @@
                     <span class="info-box-text">Guest List</span>
                     <span class="info-box-number">
                       
-                      <small>Total Guest: 237</small>
+                      <small>Total Guest: -</small>
+                    </span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                  </a>
+                <!-- /.info-box -->
+              </div>
+
+               <div class="col-12 col-sm-6 col-md-3">
+                <a href="loginlist">
+                <div class="info-box">
+                  <span class="info-box-icon text-bg-success shadow-sm">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                  </span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Login List</span>
+                    <span class="info-box-number">
+                      
+                      <small>Total Guest: -</small>
                     </span>
                   </div>
                   <!-- /.info-box-content -->

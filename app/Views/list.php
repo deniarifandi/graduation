@@ -13,10 +13,12 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0"><?= $title ?></h3></div>
+
+              <div class="col-sm-6"><h3 class="mb-0"><?= $title ?></h3>
+              </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
                 </ol>
               </div>
@@ -114,9 +116,9 @@
                   render: function(data, type, row, meta) {
                     return `
                       <div id="copy-container">
-                       <p id="copy-text"><?php echo base_url();?>qr/${row.<?= $primaryKey ?>}</p>
+                       <p id="copy-text"><a href="<?php echo base_url();?>qr/${row.<?= $primaryKey ?>}" target="_blank"><?php echo base_url();?>qr/${row.<?= $primaryKey ?>}</a></p>
                         <div id="qrcode-container">
-                          <div id="qrcode-<?= $table ?>/${row.<?= $primaryKey ?>}" class="qrcode" data-token="<?= base_url() ?>qr/${row.<?= $primaryKey ?>}" style="width: 100px; height:100px;">
+                          <div id="qrcode-<?= $table ?>/${row.<?= $primaryKey ?>}" class="qrcode" data-token="id:${row.<?= $primaryKey ?>}" style="width: 100px; height:100px;">
                           </div>
                         </div>
                       </div>

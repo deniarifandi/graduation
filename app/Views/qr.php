@@ -20,6 +20,7 @@
       width: 100%;
       border: 3px solid white;
       padding: 6px;
+      background-color: white;
     }
   </style>
 
@@ -43,7 +44,7 @@
 
           <div class="col-md-6">
             <br>
-            <h5>This is Your</h5>
+            
             <h2>E-Ticket</h2>
           </div>
         </div>
@@ -58,23 +59,30 @@
         <div class="row">
           <div class="col-md-8" style="text-align: left; padding-left: 50px; padding-right: 50px;">
             <h6 class="text-secondary">EVENT TITLE</h6>
-            <h5><b>Graduation of 2025</b></h5><br>
+            <h5><b>My Little Island School Graduation Reception 2025</b></h5>
             <h6 class="text-secondary">EVENT Date and Time</h6>
-            <h5><b>xxx, xxx 6th, 2025 </b></h5>
+            <h5><b>Friday, June 13th, 2025 - 16.30 WIB </b></h5>
             <h6 class="text-secondary">Venue</h6>
-            <h5><b>Hal xxxxxxx<br>
-            Jl. xxxx xxxx xxx. 7 Sukun, Malang</b></h5>
-            <h6 class="text-secondary">Ticket No.</h6>
-            <h5><b></b><?= $data[0]->student_id ?></h5>
+            <h5><b>Atria Hotel Ballroom, 2nd floor</b></h5>
             <h6 class="text-secondary">Graduates Name</h6>
             <h5><b><?= $data[0]->student_name ?></b></h5>
+            <h6 class="text-secondary">Table Number</h6>
+            <h5><b><?= $data[0]->meja ?></b></h5>
+            <h6 class="text-secondary">Additional Ticket</h6>
+            <h5><b><?= $data[0]->add1 ?></b></h5>
           </div>
           <div class="col-md-4 align-items-center">
             <h6 class="text-white">Ticket Barcode:</h6>
             <!-- <img src="barcode.jpg" style="max-width:250px" class="border border-black p-3"> -->
             
             <div id="qrcode" style="width: 250px; height:250px" class="center"></div>
-            <h5><b><?= $data[0]->student_id ?></b></h5>
+            <h5><b>TCKT-<?= $data[0]->student_id ?></b></h5>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 px-5">
+            <h5>Note : kindly arrive 30 minutes before the event starts. Thankyou</h5>
           </div>
         </div>
 
@@ -90,19 +98,21 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script type="text/javascript">
 
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-    width : 230,
-    height : 230
-  });
-
   $(document).ready(function () {
-    
-    var elText = "<?php echo base_url()."qr?no="?>";
-    
-    qrcode.makeCode(elText);
+    var elText = "<?= $data[0]->student_id ?>";
 
+    // Initialize the QR code object first
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      width: 230,
+      height: 230
+    });
+
+    // Then generate the code
+    qrcode.makeCode(elText);
   });
 
   

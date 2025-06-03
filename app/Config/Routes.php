@@ -12,3 +12,4 @@ $routes->resource('sd');
 $routes->post('/sd/data', 'Sd::data');
 
 $routes->get('/qr/(:num)', 'Sd::qr/$1');
+$routes->get('/loginlist', 'Sd::loginlist');

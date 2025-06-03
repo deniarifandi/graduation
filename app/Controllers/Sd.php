@@ -11,54 +11,41 @@ class Sd extends MyResourceController
 {
 
     public $table = "sd";
-    public $title = "Sd";
+    public $title = "Primary";
     public $primaryKey = "student_id";
     public $fieldList = [
         ['student_name','Nama Murid'], 
         ['class','Kelas'],
-        ['papa_name','Nama Papa'],
-        ['mama_name','Nama Mama'],
-        ['add1','tambahan 1'],
-        ['add2','tambahan 2'],
-        ['add3','tambahan 3'],
-        ['add4','tambahan 4'],
-        ['add5','tambahan 5'],
+        ['meja','Nomor Meja'],
+        ['add1','Ticket'],
+        ['add2','Additional Ticket'],
         ['hp','Phone Number']
     ];
 
     public $field = [
         ['text','student_name'],
         ['select','class'],
-        ['text','papa_name'],
-        ['text','mama_name'],
-        ['text','add1'],
-        ['text','add2'],
-        ['text','add3'],
-        ['text','add4'],
-        ['text','add5'],
+        ['text','meja'],
+        ['select','add1'],
+        ['select','add2'],
         ['text','hp'],
 ];
 
 public $fieldName = [
         'Nama Murid', 
         'Kelas',
-        'Nama Papa',
-        'Nama Mama',
-        'Tambahan 1',
-        'Tambahan 2',
-        'Tambahan 3',
-        'Tambahan 4',
-        'Tambahan 5',
+        'Nomor Meja',
+        'Ticket',
+        'Additional Ticket',
         'HP'
     ];
 
 public $fieldOption = [
   ['noOption'], 
-  [[1,'A'],[2,'B'],[3,'C'],[4,'D']],
-  ['noOption'],
-  ['noOption'],
-  ['noOption'],
-  ['noOption'],
+  [['P6A','P6A'],['P6B','P6B'],['P6C','P6C']],
+  ['noOption'], 
+  [[3,'3']],
+  [[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5']],
   ['noOption'],
   ['noOption'],
   ['noOption']
@@ -94,6 +81,49 @@ public $fieldOption = [
 
         // print_r($builder->get()->getResult());
         return view('qr',['data' => $builder->get()->getResult()]);
+    }
+
+    public function loginlist(){
+          $logindata = "";
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $logindata = Database::connect()->table($this->table)
+            ->select('sd.*')
+            ->where('student_id',$id)
+            ->where('sd.deleted_at',null)->get()->getResult();
+
+            $db = Database::connect();
+            $builderUpdate = $db->table($this->table);
+
+            // Update the 'meja' field where student_id = $id and deleted_at is null
+            $builderUpdate->where('student_id', $id)
+                    ->where('deleted_at', null)
+                    ->set('attended', 1)
+                    ->update();
+        }
+
+        $builder1 = Database::connect()->table($this->table)
+        ->select('sd.*')
+        ->where('class','P6A')
+        ->where('sd.deleted_at',null);
+
+        $builder2 = Database::connect()->table($this->table)
+        ->select('sd.*')
+        ->where('class','P6B')
+        ->where('sd.deleted_at',null);
+
+        $builder3 = Database::connect()->table($this->table)
+        ->select('sd.*')
+        ->where('class','P6C')
+        ->where('sd.deleted_at',null);
+
+        // print_r($builder->get()->getResult());
+        return view('login',[
+            'data1' => $builder1->get()->getResult(),
+            'data2' => $builder2->get()->getResult(),
+            'data3' => $builder3->get()->getResult(),
+            'logindata' => $logindata
+        ]);
     }
 
 }
