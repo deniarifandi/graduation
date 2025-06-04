@@ -29,13 +29,13 @@
         <!--begin::Container-->
         <div class="container-fluid">
           <!-- Info boxes -->
-          <h2>Graduates Guest List: Primary</h2>
+          <h2>Graduates Guest List: NLS</h2>
           <div class="row">
             <div class="col-md-3">
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title"></h3>
-                  <h4><b>Class : A</b></h4>
+                  <h4><b>Class : Secondary 9A</b></h4>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -83,7 +83,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title"></h3>
-                    <h4><b>Class : B</b></h4>
+                    <h4><b>Class : Secondary 9B</b></h4>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -133,7 +133,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title"></h3>
-                    <h4><b>Class : C</b></h4>
+                    <h4><b>Class : College 12</b></h4>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -274,7 +274,7 @@
       const numberAfterS = value; // declare the variable with const or let
       console.log(numberAfterS);
       // Redirect using base_url PHP tag
-      window.location.href = `<?= base_url() ?>loginlist?id=` + value;
+      window.location.href = `<?= base_url() ?>loginlistn?id=` + value;
     } else {
       alert("Please enter a valid code containing 'S' followed by a number.");
     }

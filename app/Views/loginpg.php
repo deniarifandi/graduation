@@ -29,13 +29,13 @@
         <!--begin::Container-->
         <div class="container-fluid">
           <!-- Info boxes -->
-          <h2>Graduates Guest List: Primary</h2>
+          <h2>Graduates Guest List PG</h2>
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title"></h3>
-                  <h4><b>Class : A</b></h4>
+                  <h4><b>Class : K2A</b></h4>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -55,13 +55,13 @@
                         <tr>
                           <td><?= $data1[$i]->student_id ?></td>
                           <td><?= $data1[$i]->student_name ?></td>
-                          <td>
+                          <td style="text-align:center">
                             <?php if ($data1[$i]->attended == 1) {
                               ?>
-                              <span class="badge bg-success">Confirmed</span>
+                              <span class="badge bg-success">✓</span>
                               <?php
                             } else{ ?>
-                             <span class="badge bg-danger">Unconfirmed</span>
+                             <span class="badge bg-danger">X</span>
                              <?php
                            }
                            ?>
@@ -79,11 +79,11 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title"></h3>
-                    <h4><b>Class : B</b></h4>
+                    <h4><b>Class : K2B</b></h4>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -103,13 +103,13 @@
                         <tr>
                           <td><?= $data2[$i]->student_id ?></td>
                           <td><?= $data2[$i]->student_name ?></td>
-                          <td>
+                          <td style="text-align:center">
                             <?php if ($data2[$i]->attended == 1) {
                               ?>
-                              <span class="badge bg-success">Confirmed</span>
+                              <span class="badge bg-success">✓</span>
                               <?php
                             } else{ ?>
-                             <span class="badge bg-danger">Unconfirmed</span>
+                             <span class="badge bg-danger">X</span>
                              <?php
                            }
                            ?>
@@ -125,15 +125,14 @@
 
                     </table>
 
-
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title"></h3>
-                    <h4><b>Class : C</b></h4>
+                    <h4><b>Class : K2C</b></h4>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -153,13 +152,13 @@
                         <tr>
                           <td><?= $data3[$i]->student_id ?></td>
                           <td><?= $data3[$i]->student_name ?></td>
-                          <td>
+                          <td style="text-align:center">
                             <?php if ($data3[$i]->attended == 1) {
                               ?>
-                              <span class="badge bg-success">Confirmed</span>
+                              <span class="badge bg-success">✓</span>
                               <?php
                             } else{ ?>
-                             <span class="badge bg-danger">Unconfirmed</span>
+                             <span class="badge bg-danger">X</span>
                              <?php
                            }
                            ?>
@@ -180,14 +179,115 @@
                 </div>
               </div>
 
+               <div class="col-md-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title"></h3>
+                    <h4><b>Class : K2D</b></h4>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
 
-              <div class="col-md-3">
+                    <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>no</th>
+                        <th>Nama</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      for ($i=0; $i < count($data4); $i++) { 
+                        ?>
+                        <tr>
+                          <td><?= $data4[$i]->student_id ?></td>
+                          <td><?= $data4[$i]->student_name ?></td>
+                           <td style="text-align:center">
+                            <?php if ($data4[$i]->attended == 1) {
+                              ?>
+                              <span class="badge bg-success">✓</span>
+                              <?php
+                            } else{ ?>
+                             <span class="badge bg-danger">X</span>
+                             <?php
+                           }
+                           ?>
+
+                         </td>
+                         <tr>
+                          <?php
+                        }
+                        ?>
+
+                      </tbody>
+
+
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+
+               <div class="col-md-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title"></h3>
+                    <h4><b>Class : KP2</b></h4>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+
+                    <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>no</th>
+                        <th>Nama</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      for ($i=0; $i < count($data5); $i++) { 
+                        ?>
+                        <tr>
+                          <td><?= $data5[$i]->student_id ?></td>
+                          <td><?= $data5[$i]->student_name ?></td>
+                        <td style="text-align:center">
+                            <?php if ($data5[$i]->attended == 1) {
+                              ?>
+                              <span class="badge bg-success">✓</span>
+                              <?php
+                            } else{ ?>
+                             <span class="badge bg-danger">X</span>
+                             <?php
+                           }
+                           ?>
+
+                         </td>
+                         <tr>
+                          <?php
+                        }
+                        ?>
+
+                      </tbody>
+
+
+                    </table>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title"></h3>
                     <h4>
                       <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                           <input id="myInput" class="form-control" type="text">
 
                         </div>
@@ -268,15 +368,13 @@
 
   function redirectTo() {
     const value = document.getElementById('myInput').value;
-    const match = value;
 
-    if (match) {
-      const numberAfterS = value; // declare the variable with const or let
-      console.log(numberAfterS);
+    if (value) {
+     
       // Redirect using base_url PHP tag
-      window.location.href = `<?= base_url() ?>loginlist?id=` + value;
+      window.location.href = `<?= base_url() ?>loginlistpg?id=` + value;
     } else {
-      alert("Please enter a valid code containing 'S' followed by a number.");
+      alert("Please enter a valid code containing 'S1' followed by a number.");
     }
   }
 </script>

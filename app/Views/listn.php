@@ -116,7 +116,7 @@
                   render: function(data, type, row, meta) {
                     return `
                       <div id="copy-container">
-                       <p id="copy-text"><a href="<?php echo base_url();?>qr/${row.<?= $primaryKey ?>}" target="_blank"><?php echo base_url();?>qr/${row.<?= $primaryKey ?>}</a></p>
+                       <p id="copy-text"><a href="<?php echo base_url();?>qrn/${row.<?= $primaryKey ?>}" target="_blank"><?php echo base_url();?>qrn/${row.<?= $primaryKey ?>}</a></p>
                         <div id="qrcode-container">
                          
                         </div>
