@@ -59,7 +59,7 @@
         <div class="row">
           <div class="col-md-8" style="text-align: left; padding-left: 50px; padding-right: 50px;">
             <h6 class="text-secondary">EVENT TITLE</h6>
-            <h5><b>My Little Island School Graduation Reception 2025</b></h5>
+            <h5><b>My Little Island School - Primary Graduation Reception 2025</b></h5>
             <h6 class="text-secondary">EVENT Date and Time</h6>
             <h5><b>Friday, June 13th, 2025 - 16.30 WIB </b></h5>
             <h6 class="text-secondary">Venue</h6>
