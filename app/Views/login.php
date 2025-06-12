@@ -56,7 +56,6 @@
                         <tr>
                            <td ><?= $i+1 ?></td>
                           <td><?= $data1[$i]->student_name ?></td>
-                          <td><?= substr($data5[$i]->student_name, 0, 10)  ?></td>
                           <td><?= $data1[$i]->meja ?></td>
                           <td>
                             <?php if ($data1[$i]->attended == 1) {
