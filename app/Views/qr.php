@@ -69,7 +69,7 @@
             <h6 class="text-secondary">Table Number</h6>
             <h5><b><?= $data[0]->meja ?></b></h5>
             <h6 class="text-secondary">Additional Ticket</h6>
-            <h5><b><?= $data[0]->add1 ?></b></h5>
+            <h5><b><?= $data[0]->add2 ?></b></h5>
           </div>
           <div class="col-md-4 align-items-center">
             <h6 class="text-white">Ticket Barcode:</h6>
