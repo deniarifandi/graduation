@@ -45,6 +45,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -55,6 +56,7 @@
                         <tr>
                           <td><?= $data1[$i]->student_id ?></td>
                           <td><?= $data1[$i]->student_name ?></td>
+                          <td><?= $data1[$i]->meja ?></td>
                           <td style="text-align:center">
                             <?php if ($data1[$i]->attended == 1) {
                               ?>
@@ -93,6 +95,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -103,6 +106,7 @@
                         <tr>
                           <td><?= $data2[$i]->student_id ?></td>
                           <td><?= $data2[$i]->student_name ?></td>
+                          <td><?= $data1[$i]->meja ?></td>
                           <td style="text-align:center">
                             <?php if ($data2[$i]->attended == 1) {
                               ?>
@@ -142,6 +146,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -152,6 +157,7 @@
                         <tr>
                           <td><?= $data3[$i]->student_id ?></td>
                           <td><?= $data3[$i]->student_name ?></td>
+                          <td><?= $data1[$i]->meja ?></td>
                           <td style="text-align:center">
                             <?php if ($data3[$i]->attended == 1) {
                               ?>
@@ -193,6 +199,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -203,6 +210,7 @@
                         <tr>
                           <td><?= $data4[$i]->student_id ?></td>
                           <td><?= $data4[$i]->student_name ?></td>
+                          <td><?= $data1[$i]->meja ?></td>
                            <td style="text-align:center">
                             <?php if ($data4[$i]->attended == 1) {
                               ?>
@@ -244,6 +252,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -254,6 +263,7 @@
                         <tr>
                           <td><?= $data5[$i]->student_id ?></td>
                           <td><?= $data5[$i]->student_name ?></td>
+                          <td><?= $data1[$i]->meja ?></td>
                         <td style="text-align:center">
                             <?php if ($data5[$i]->attended == 1) {
                               ?>
