@@ -151,7 +151,7 @@
                       for ($i=0; $i < count($data3); $i++) { 
                         ?>
                         <tr>
-                          <td><?= $data3[$i]->student_id ?></td>
+                          <td ><?= $i ?></td>
                           <td><?= $data3[$i]->student_name ?></td>
                           <td>
                             <?php if ($data3[$i]->attended == 1) {
