@@ -45,7 +45,7 @@ public $fieldOption = [
   [['Secondary 9A','Secondary 9A'],['Secondary 9B','Secondary 9B'],['College 12','College 12']],
   ['noOption'], 
   [[3,'3']],
-  [[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5']],
+  [[0,'0'],[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5']],
   ['noOption'],
   ['noOption'],
   ['noOption']
