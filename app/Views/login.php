@@ -45,6 +45,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
@@ -94,6 +95,7 @@
                       <tr>
                         <th>no</th>
                         <th>Nama</th>
+                        <th>Meja</th>
                         <th>Status</th>
                       </tr>
                     </thead>
