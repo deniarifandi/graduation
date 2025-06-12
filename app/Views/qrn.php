@@ -61,7 +61,7 @@
             <h6 class="text-secondary">EVENT TITLE</h6>
             <h5><b>National Leader School Graduation Reception 2025</b></h5>
             <h6 class="text-secondary">EVENT Date and Time</h6>
-            <h5><b>Event Date dan Time : Friday, June 13th, 2025 - 08.00 WIB </b></h5>
+            <h5><b>Friday, June 13th, 2025 - 08.00 WIB </b></h5>
             <h6 class="text-secondary">Venue</h6>
             <h5><b>Atria Hotel Ballroom, 2nd floor</b></h5>
             <h6 class="text-secondary">Graduates Name</h6>
