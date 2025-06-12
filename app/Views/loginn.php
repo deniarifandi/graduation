@@ -54,7 +54,7 @@
                       for ($i=0; $i < count($data1); $i++) { 
                         ?>
                         <tr>
-                          <td ><?= $i+1 ?></td>
+                          <td><?= $data1[$i]->student_id ?></td>
                           <td><?= $data1[$i]->student_name ?></td>
                           <td><?= $data1[$i]->meja ?></td>
                           <td>
