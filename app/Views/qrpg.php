@@ -59,9 +59,9 @@
         <div class="row">
           <div class="col-md-8" style="text-align: left; padding-left: 50px; padding-right: 50px;">
             <h6 class="text-secondary">EVENT TITLE</h6>
-            <h5><b>Event Title : My Little Island School - Kindergarten Graduation Reception </b></h5>
+            <h5><b>My Little Island School - Kindergarten Graduation Reception </b></h5>
             <h6 class="text-secondary">EVENT Date and Time</h6>
-            <h5><b>Event Date dan Time : Friday, June 14th, 2025 - 09.00 WIB </b></h5>
+            <h5><b>Saturday, June 14th, 2025 - 09.00 WIB </b></h5>
             <h6 class="text-secondary">Venue</h6>
             <h5><b>Atria Hotel Ballroom, 2nd floor</b></h5>
             <h6 class="text-secondary">Graduates Name</h6>
