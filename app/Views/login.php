@@ -43,7 +43,7 @@
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>no</th>
+                        <th>Guest ID</th>
                         <th>Nama</th>
                         <th>Meja</th>
                         <th>Status</th>
@@ -54,7 +54,7 @@
                       for ($i=0; $i < count($data1); $i++) { 
                         ?>
                         <tr>
-                           <td ><?= $i+1 ?></td>
+                          <td><?= $data1[$i]->id ?></td>
                           <td><?= $data1[$i]->student_name ?></td>
                           <td><?= $data1[$i]->meja ?></td>
                           <td>
@@ -93,7 +93,7 @@
                    <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>no</th>
+                        <th>Guest ID</th>
                         <th>Nama</th>
                         <th>Meja</th>
                         <th>Status</th>
@@ -104,7 +104,7 @@
                       for ($i=0; $i < count($data2); $i++) { 
                         ?>
                         <tr>
-                           <td ><?= $i+1 ?></td>
+                          <td><?= $data2[$i]->id ?></td>
                           <td><?= $data2[$i]->student_name ?></td>
                           <td><?= $data2[$i]->meja ?></td>
                           <td>
@@ -145,7 +145,7 @@
                     <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>no</th>
+                       <th>Guest ID</th>
                         <th>Nama</th>
                         <th>Meja</th>
                         <th>Status</th>
@@ -156,7 +156,7 @@
                       for ($i=0; $i < count($data3); $i++) { 
                         ?>
                         <tr>
-                          <td ><?= $i+1 ?></td>
+                          <td><?= $data3[$i]->id ?></td>
                           <td><?= $data3[$i]->student_name ?></td>
                           <td><?= $data3[$i]->meja ?></td>
                           <td>
