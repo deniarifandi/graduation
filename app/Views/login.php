@@ -204,16 +204,17 @@
                     </h4>
                   </div>
                   <!-- /.card-header -->
-                  <div class="card-body">
+                 <div class="card-body">
 
                     <?php 
                     if (isset($logindata[0]->student_name)) {
                       ?>
-                      <h5>Student Name : <?php echo $logindata[0]->student_name ?></h5>
+                      <h5 style="text-align:center">Student Name :</h5>
+                      <h3 style="text-align:center"><?php echo $logindata[0]->student_name ?></h3>
 
                       <br>
                       <h3 style="text-align:center">Table Number:</h3>
-                      <h1 style="text-align:center; font-size: 100px;"><?php echo $logindata[0]->meja ?></h1>
+                      <h1 style="text-align:center; font-size: 120px;"><?php echo $logindata[0]->meja ?></h1>
                       <?php
                     }else{
                       ?>
