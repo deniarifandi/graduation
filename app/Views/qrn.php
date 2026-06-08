@@ -59,7 +59,7 @@
         <div class="row">
           <div class="col-md-8" style="text-align: left; padding-left: 50px; padding-right: 50px;">
             <h6 class="text-secondary">EVENT TITLE</h6>
-            <h5><b>National Leader School Graduation Reception 2026</b></h5>
+            <h5><b>National Leader School - Graduation Reception 2026</b></h5>
             <h6 class="text-secondary">EVENT Date and Time</h6>
             <h5><b>Wednesday, June 10th, 2026 - 17:00 WIB - 21:00 WIB</b></h5>
             <h6 class="text-secondary">Venue</h6>
@@ -75,7 +75,7 @@
             <h6 class="text-white">Ticket Barcode:</h6>
             <!-- <img src="barcode.jpg" style="max-width:250px" class="border border-black p-3"> -->
             
-            <div id="qrcode" style="width: 250px; height:250px" class="center"></div>
+            <div id="qrcode" style="width: 250px; height:250px; padding: 13px;" class="center"></div>
             <h5><b>TCKT-<?= $data[0]->student_id ?></b></h5>
           </div>
         </div>
@@ -107,8 +107,8 @@
 
     // Initialize the QR code object first
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-      width: 230,
-      height: 230
+      width: 220,
+      height: 220
     });
 
     // Then generate the code
