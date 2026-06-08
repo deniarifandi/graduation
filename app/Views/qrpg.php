@@ -123,13 +123,13 @@
         <div class="col-md-7">
           <div class="mb-3">
             <p class="label-text">Event Title</p>
-            <h5 class="info-text">My Little Island School - Kindergarten Graduation Reception 2026</h5>
+            <h5 class="info-text">My Little Island School - Kindergarten Graduation Reception</h5>
           </div>
 
           <div class="row">
             <div class="col-sm-6">
               <p class="label-text">Date & Time</p>
-              <p class="info-text">Thursday, June 11th, 2026<br>08:30 WIB - 13:30 WIB</p>
+              <p class="info-text">Thursday, June 11 2026<br>08:30 WIB - 13.30 WIB</p>
             </div>
             <div class="col-sm-6">
               <p class="label-text">Venue</p>
