@@ -110,27 +110,32 @@ public $fieldOption = [
 
         $builder1 = Database::connect()->table($this->table)
         ->select('pg.*')
-        ->where('class','K2A')
+        ->where('class','K2 A')
         ->where('pg.deleted_at',null);
 
         $builder2 = Database::connect()->table($this->table)
         ->select('pg.*')
-        ->where('class','K2B')
+        ->where('class','K2 B')
         ->where('pg.deleted_at',null);
 
         $builder3 = Database::connect()->table($this->table)
         ->select('pg.*')
-        ->where('class','K2C')
+        ->where('class','K2 C')
         ->where('pg.deleted_at',null);
 
         $builder4 = Database::connect()->table($this->table)
         ->select('pg.*')
-        ->where('class','K2D')
+        ->where('class','K2 D')
         ->where('pg.deleted_at',null);
 
         $builder5 = Database::connect()->table($this->table)
         ->select('pg.*')
-        ->where('class','KP2')
+        ->where('class','KP 2')
+        ->where('pg.deleted_at',null);
+
+        $builder6 = Database::connect()->table($this->table)
+        ->select('pg.*')
+        ->where('class','KH')
         ->where('pg.deleted_at',null);
 
         // print_r($builder->get()->getResult());
@@ -140,6 +145,7 @@ public $fieldOption = [
             'data3' => $builder3->get()->getResult(),
             'data4' => $builder4->get()->getResult(),
             'data5' => $builder5->get()->getResult(),
+            'data6' => $builder6->get()->getResult(),
             'logindata' => $logindata
         ]);
     }

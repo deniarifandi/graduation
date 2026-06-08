@@ -118,11 +118,17 @@ public $fieldOption = [
         ->where('class','P6C')
         ->where('sd.deleted_at',null);
 
+        $builder4 = Database::connect()->table($this->table)
+        ->select('sd.*')
+        ->where('class','P6D')
+        ->where('sd.deleted_at',null);
+
         // print_r($builder->get()->getResult());
         return view('login',[
             'data1' => $builder1->get()->getResult(),
             'data2' => $builder2->get()->getResult(),
             'data3' => $builder3->get()->getResult(),
+            'data4' => $builder4->get()->getResult(),
             'logindata' => $logindata
         ]);
     }
