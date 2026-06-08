@@ -42,7 +42,7 @@ public $fieldName = [
 
 public $fieldOption = [
   ['noOption'], 
-  [['K2A','K2A'],['K2B','K2B'],['K2C','K2C'],['K2D','K2D'],['KP2','KP2'],],
+  [['K2 A','K2 A'],['K2 B','K2 B'],['K2 C','K2 C'],['K2 D','K2 D'],['KP 2','KP 2'],['KH','KH']],
   ['noOption'], 
   [[3,'3']],
     [[0,'0'],[1,'1'],[2,'2'],[3,'3'],[4,'4'],[5,'5']],
