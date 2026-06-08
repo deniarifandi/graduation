@@ -129,7 +129,7 @@
           <div class="row">
             <div class="col-sm-6">
               <p class="label-text">Date & Time</p>
-              <p class="info-text">Thursday, June 11 2025<br>09:00 WIB</p>
+              <p class="info-text">Wednesday, June 10 2025<br>07:30 WIB - 13.00 WIB</p>
             </div>
             <div class="col-sm-6">
               <p class="label-text">Venue</p>
