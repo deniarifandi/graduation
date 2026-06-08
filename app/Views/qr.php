@@ -17,7 +17,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 40px 0;
+      padding: 20px 0;
       margin: 0;
     }
 
@@ -28,7 +28,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      padding: 45px;
+      padding: 20px; /* Mobile Friendly default padding */
       overflow: hidden;
     }
 
@@ -38,13 +38,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 450px;
-      height: 450px;
+      width: 280px;
+      height: 280px;
       background-image: url('<?php echo base_url(); ?>/assets/img/logomlinlst.png');
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.4; /* Perfectly balanced visibility without hurting readability */
+      opacity: 0.25; /* Softened slightly for layered element scanning mobile readability */
       pointer-events: none;
       z-index: 0;
     }
@@ -67,6 +67,7 @@
       border-radius: 50%;
       transform: translateY(-50%);
       z-index: 2;
+      display: none; /* Hide on small viewports to prevent breakage */
     }
     .ticket-card::before { left: -15px; border-right: 1px solid rgba(255, 255, 255, 0.1); }
     .ticket-card::after { right: -15px; border-left: 1px solid rgba(255, 255, 255, 0.1); }
@@ -74,7 +75,7 @@
     /* Typography Details */
     .text-label {
       color: #94a3b8;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 2px;
@@ -83,15 +84,15 @@
 
     .info-value {
       font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 22px;
+      font-size: 1rem;
+      margin-bottom: 18px;
       color: #ffffff;
     }
 
     /* Highlighted Student Name */
     .student-highlight {
       color: #f59e0b; /* Premium Gold Accent */
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: 0.5px;
     }
@@ -102,23 +103,29 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       padding: 10px;
       border-radius: 8px;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
       color: #cbd5e1;
     }
 
     /* Clean QR Code Framing */
     .qr-container {
       background: #ffffff;
-      padding: 14px;
+      padding: 12px;
       border-radius: 14px;
       display: inline-block;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 100%;
+    }
+    
+    .qr-container img {
+      max-width: 100%;
+      height: auto !important; /* Ensure dynamic scaling on small monitors */
     }
 
     .ticket-id {
-      letter-spacing: 3px;
-      font-size: 1.1rem;
+      letter-spacing: 2px;
+      font-size: 1rem;
       color: #38bdf8; /* Soft Electric Blue */
       margin-top: 10px;
     }
@@ -126,8 +133,43 @@
     /* Elegant Perforated Divider Line */
     .ticket-perforation {
       border-top: 2px dashed rgba(255, 255, 255, 0.15);
-      margin: 30px 0 20px 0;
+      margin: 20px 0;
       position: relative;
+    }
+
+    /* Tablet and Desktop Enhancements */
+    @media (min-width: 768px) {
+      body {
+        padding: 40px 0;
+      }
+      .ticket-card {
+        padding: 45px;
+      }
+      .ticket-card::before, .ticket-card::after {
+        display: block; /* Show decorative punched elements securely on desktops */
+      }
+      .ticket-watermark {
+        width: 450px;
+        height: 450px;
+        opacity: 0.4;
+      }
+      .text-label {
+        font-size: 0.8rem;
+      }
+      .info-value {
+        font-size: 1.1rem;
+        margin-bottom: 22px;
+      }
+      .student-highlight {
+        font-size: 1.4rem;
+      }
+      .scan-notice {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+      }
+      .qr-divider {
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
     }
   </style>
 </head>
@@ -150,10 +192,10 @@
             <!-- Header Group -->
             <div class="row align-items-center mb-4">
               <div class="col-6 text-start">
-                <img src="<?php echo base_url(); ?>/assets/img/logotiket.png" style="max-height: 65px; width: auto;" alt="Logo">
+                <img src="<?php echo base_url(); ?>/assets/img/logotiket.png" style="max-height: 50px; width: auto;" alt="Logo">
               </div>
               <div class="col-6 text-end">
-                <h2 class="fw-bold m-0" style="letter-spacing: 2px; color: #38bdf8;">E-TICKET</h2>
+                <h3 class="fw-bold m-0" style="letter-spacing: 2px; color: #38bdf8;">E-TICKET</h3>
               </div>
             </div>
 
@@ -195,18 +237,18 @@
                 <div class="row">
                   <div class="col-6">
                     <div class="text-label">Table Number</div>
-                    <div class="info-value" style="font-size: 1.3rem; color: #38bdf8;"><?= htmlspecialchars($data[0]->meja) ?></div>
+                    <div class="info-value" style="font-size: 1.2rem; color: #38bdf8;"><?= htmlspecialchars($data[0]->meja) ?></div>
                   </div>
                   <div class="col-6">
                     <div class="text-label">Additional Ticket</div>
-                    <div class="info-value text-white" style="font-size: 1.3rem;"><?= htmlspecialchars($data[0]->add2) ?></div>
+                    <div class="info-value text-white" style="font-size: 1.2rem;"><?= htmlspecialchars($data[0]->add2) ?></div>
                   </div>
                 </div>
 
               </div>
 
               <!-- Right Column: Verification/QR -->
-              <div class="col-md-5 text-center d-flex flex-column align-items-center justify-content-center mt-4 mt-md-0" style="border-left: 1px solid rgba(255,255,255,0.05);">
+              <div class="col-md-5 text-center d-flex flex-column align-items-center justify-content-center mt-4 mt-md-0 pt-4 pt-md-0 qr-divider">
                 
                 <div class="text-label mb-3">Scan Barcode</div>
                 
@@ -225,7 +267,7 @@
             <!-- Footer Reminders -->
             <div class="row">
               <div class="col-12 text-center">
-                <p class="m-0 text-muted style" style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                <p class="m-0 text-muted" style="font-size: 0.8rem; letter-spacing: 0.5px;">
                   <strong class="text-white">Note: Kindly arrive 30 minutes before the event starts. Thank you.</strong>
                 </p>
               </div>
