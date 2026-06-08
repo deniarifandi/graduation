@@ -44,7 +44,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.6; /* Perfectly balanced visibility without hurting readability */
+      opacity: 0.4; /* Perfectly balanced visibility without hurting readability */
       pointer-events: none;
       z-index: 0;
     }
@@ -85,7 +85,7 @@
       font-weight: 600;
       font-size: 1.1rem;
       margin-bottom: 22px;
-      color: #f8fafc;
+      color: #ffffff;
     }
 
     /* Highlighted Student Name */
@@ -179,7 +179,7 @@
 
                 <div>
                   <div class="text-label">Event Date and Time</div>
-                  <div class="info-value">Wednesday, June 10th, 2026 <br><span class="fw-normal text-muted" style="font-size:0.95rem;">07:30 WIB - 13:00 WIB</span></div>
+                  <div class="info-value text-white">Wednesday, June 10th, 2026 <br><span class="fw-normal" style="font-size:0.95rem;">07:30 WIB - 13:00 WIB</span></div>
                 </div>
 
                 <div>
@@ -199,7 +199,7 @@
                   </div>
                   <div class="col-6">
                     <div class="text-label">Additional Ticket</div>
-                    <div class="info-value" style="font-size: 1.3rem;"><?= htmlspecialchars($data[0]->add2) ?></div>
+                    <div class="info-value text-white" style="font-size: 1.3rem;"><?= htmlspecialchars($data[0]->add2) ?></div>
                   </div>
                 </div>
 
