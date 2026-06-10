@@ -190,8 +190,8 @@ echo view('layouts/header.php');
                     <?php else: ?>
                       <?php foreach ($class['data'] as $row): ?>
                         <tr>
-                          <td class="mono-text fw-bold text-secondary">#<?= $row->student_id ?></td>
-                          <td class="fw-bold"><?= esc(strlen($row->student_name) > 15 ? substr($row->student_name, 0, 15) . '....' : $row->student_name) ?></td>
+                          <td class="mono-text fw-bold text-secondary"># <?= $row->student_id ?></td>
+                          <td class="fw-bold"><?= esc(strlen($row->student_name) > 20 ? substr($row->student_name, 0, 20) . '....' : $row->student_name) ?></td>
                           <td class="mono-text fw-bold"><?= $row->meja ?></td>
                           <td class="text-center">
                             <?php if ($row->attended == 1): ?>
