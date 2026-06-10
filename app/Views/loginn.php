@@ -160,9 +160,8 @@ echo view('layouts/header.php');
       <?php
       // Configuration matrix mapping out variables dynamically for NLS
       $classes = [
-          ['title' => 'Class : Secondary 9A', 'accent' => 'accent-line-9a', 'data' => $data1],
-          ['title' => 'Class : Secondary 9B', 'accent' => 'accent-line-9b', 'data' => $data2],
-          ['title' => 'Class : College 12',    'accent' => 'accent-line-c12', 'data' => $data3],
+          ['title' => 'Class : S9', 'accent' => 'accent-line-9a', 'data' => $data1],
+          ['title' => 'Class : JC12', 'accent' => 'accent-line-9b', 'data' => $data2]
       ];
       
       foreach ($classes as $class): 

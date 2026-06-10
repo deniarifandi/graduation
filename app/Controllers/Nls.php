@@ -112,24 +112,18 @@ public $fieldOption = [
 
         $builder1 = Database::connect()->table($this->table)
         ->select('nls.*')
-        ->where('class','Secondary 9A')
+        ->where('class','S9')
         ->where('nls.deleted_at',null);
 
         $builder2 = Database::connect()->table($this->table)
         ->select('nls.*')
-        ->where('class','Secondary 9B')
-        ->where('nls.deleted_at',null);
-
-        $builder3 = Database::connect()->table($this->table)
-        ->select('nls.*')
-        ->where('class','College 12')
+        ->where('class','JC12')
         ->where('nls.deleted_at',null);
 
         // print_r($builder->get()->getResult());
         return view('loginn',[
             'data1' => $builder1->get()->getResult(),
             'data2' => $builder2->get()->getResult(),
-            'data3' => $builder3->get()->getResult(),
             'logindata' => $logindata
         ]);
     }
