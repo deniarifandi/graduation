@@ -108,13 +108,22 @@
 
     /* Clean QR Code Framing */
     .qr-container {
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 14px;
-      display: inline-block;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      max-width: 100%;
-    }
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+#qrcode {
+  background: #ffffff;
+  display: inline-block;
+}
+
+#qrcode canvas,
+#qrcode img {
+  display: block;
+}
     
     .qr-container img {
       max-width: 100%;
@@ -270,19 +279,45 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function () {
-      var elText = "<?= $data[0]->student_id ?>";
+$(document).ready(function () {
 
-      // Instantiating precision QR Box sizes
-      var qrcode = new QRCode(document.getElementById("qrcode"), {
+    var elText = "<?= htmlspecialchars($data[0]->student_id, ENT_QUOTES) ?>";
+
+    new QRCode(document.getElementById("qrcode"), {
         text: elText,
         width: 180,
         height: 180,
-        colorDark : "#0a163d",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
+        colorDark: "#0a163d",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     });
-  </script>
+
+    setTimeout(function () {
+
+        const qrWrapper = document.getElementById("qrcode");
+        const oldCanvas = qrWrapper.querySelector("canvas");
+
+        if (!oldCanvas) return;
+
+        const quietZone = 20;
+
+        const newCanvas = document.createElement("canvas");
+        newCanvas.width = oldCanvas.width + quietZone * 2;
+        newCanvas.height = oldCanvas.height + quietZone * 2;
+
+        const ctx = newCanvas.getContext("2d");
+
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, newCanvas.width, newCanvas.height);
+
+        ctx.drawImage(oldCanvas, quietZone, quietZone);
+
+        qrWrapper.innerHTML = "";
+        qrWrapper.appendChild(newCanvas);
+
+    }, 150);
+
+});
+</script>
 </body>
 </html>

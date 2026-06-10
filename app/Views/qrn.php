@@ -80,6 +80,29 @@
       font-weight: 500;
     }
 
+    /* FORCED LIGHT SCHEME ON THE QR CONTAINER */
+    .qr-container {
+      background-color: #ffffff !important;
+      color: #0a163d !important;
+      color-scheme: light; /* Instructs mobile browsers to not invert colors here */
+      padding: 12px;
+      border-radius: 14px;
+      display: inline-block;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 100%;
+    }
+    
+    /* Ensure the target wrapper itself forces white */
+#qrcode {
+    display: inline-block;
+    background: #ffffff;
+    padding: 0;
+}
+
+#qrcode canvas {
+    display: block;
+}
+
     .info-value {
       font-weight: 600;
       font-size: 1rem;
@@ -104,21 +127,6 @@
       font-size: 0.75rem;
       letter-spacing: 1px;
       color: #cbd5e1;
-    }
-
-    /* Clean QR Code Framing */
-    .qr-container {
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 14px;
-      display: inline-block;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      max-width: 100%;
-    }
-    
-    .qr-container img {
-      max-width: 100%;
-      height: auto !important; 
     }
 
     .ticket-id {
@@ -241,8 +249,8 @@
                 
                 <div class="text-label mb-3">Scan Barcode</div>
                 
-                <div class="qr-container mb-2">
-                  <div id="qrcode"></div>
+                <div class="qr-container mb-2" style="background-color: #ffffff !important; color-scheme: light !important;">
+                  <div id="qrcode" style="background-color: #ffffff !important;"></div>
                 </div>
                 
                 <div class="ticket-id fw-bold">TCKT-<?= htmlspecialchars($data[0]->student_id) ?></div>
@@ -269,20 +277,50 @@
   <script src="<?php echo base_url(); ?>assets/js/qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      var elText = "<?= $data[0]->student_id ?>";
+<script type="text/javascript">
+$(document).ready(function () {
 
-      // Instantiating clean, decoupled layout generator
-      var qrcode = new QRCode(document.getElementById("qrcode"), {
+    var elText = "<?= $data[0]->student_id ?>";
+
+    new QRCode(document.getElementById("qrcode"), {
         text: elText,
         width: 180,
         height: 180,
-        colorDark : "#0a163d",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
+        colorDark: "#0a163d",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     });
-  </script>
+
+    setTimeout(function () {
+
+        var oldCanvas = document.querySelector("#qrcode canvas");
+
+        if (!oldCanvas) {
+            return;
+        }
+
+        var padding = 20;
+
+        var newCanvas = document.createElement("canvas");
+        newCanvas.width = oldCanvas.width + (padding * 2);
+        newCanvas.height = oldCanvas.height + (padding * 2);
+
+        var ctx = newCanvas.getContext("2d");
+
+        // White background
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, newCanvas.width, newCanvas.height);
+
+        // Draw original QR in center
+        ctx.drawImage(oldCanvas, padding, padding);
+
+        // Replace old QR with padded version
+        document.getElementById("qrcode").innerHTML = "";
+        document.getElementById("qrcode").appendChild(newCanvas);
+
+    }, 100);
+
+});
+</script>
 </body>
 </html>
