@@ -74,7 +74,8 @@ public $fieldOption = [
         $datatable = new Datatable();
 
         return $datatable->generate($builder, 'pg.student_id',[
-            'pg.student_id'
+            'pg.student_id',
+            'pg.student_name'
         ]);
     }
 
