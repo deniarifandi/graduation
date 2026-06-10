@@ -206,12 +206,12 @@
                 
                 <div>
                   <div class="text-label">Event Title</div>
-                  <div class="info-value text-wrap">National Leader School - Graduation Reception 2026</div>
+                  <div class="info-value text-wrap">National Leader School - Graduation Ceremony 2026</div>
                 </div>
 
                 <div>
                   <div class="text-label">Event Date and Time</div>
-                  <div class="info-value text-white">Wednesday, June 10th, 2026 <br><span class="fw-normal" style="font-size:0.95rem;">17:00 WIB - 21:00 WIB</span></div>
+                  <div class="info-value text-white">Thursday, June 11th, 2026 <br><span class="fw-normal" style="font-size:0.95rem;">17:00 WIB - 21:00 WIB</span></div>
                 </div>
 
                 <div>
